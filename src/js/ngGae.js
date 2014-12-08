@@ -53,7 +53,7 @@
                 },
 
                 /**
-                 * Initializes the application. It loads asynchronously all needed libraries
+                 * Initializes the application. It loads all needed libraries
                  * @param {array} endPoints - parameters for gapi.client.load()
                  *
                  * @return {object} return promise
