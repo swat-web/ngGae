@@ -1,0 +1,24 @@
+{
+  "name": "ngGae",
+  "version": "1.0.0",
+  "authors": [
+    "Vlad Tansky <vl.tansky@gmail.com>"
+  ],
+  "description": "AngularJS library for Google App Engine",
+  "main": "dist/ngGae.js",
+  "keywords": [
+    "GAE",
+    "angularjs",
+    "google",
+    "app",
+    "engine",
+    "google",
+    "gapi",
+    "google",
+    "client.js"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.3.5"
+  }
+}
