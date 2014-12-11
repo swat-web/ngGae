@@ -1,19 +1,17 @@
-angular.module('GAE-example', [])
+angular.module('GAE-example', ['ngGae'])
 /**
  * controller for initialize google auth factory
  */
-    .controller('AuthCtrl', ['$rootScope', '$window', '$scope', 'GapiService', function($rootScope, $window, $scope, GapiService) {
+    .controller('AuthCtrl', ['$rootScope', '$window', '$scope', 'ngGae', function($rootScope, $window, $scope, ngGae) {
         $scope.isAuth = false;
         $window.init = function() {
-            GapiService.setClientId('226518157703-ci162kg5egku86q9nihjiuevrpjn7g8e.apps.googleusercontent.com');
-            GapiService.setScopes('https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me');
-            GapiService.setImmediate(true);
-            GapiService.init("client", "https://webtevacontrol.appspot.com/_ah/api").then(function() {
-                $rootScope.load++;//for progress bar
+            ngGae.setClientId('YOUR_CLIENT_ID');
+            ngGae.setScopes('https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me');
+            ngGae.setImmediate(true);
+            ngGae.init("client", "https://YOURDOMAIN.appspot.com/_ah/api").then(function() {
                 console.log('init completed');
-                if(GapiService.getLoginStatus() == false)
-                    GapiService.auth().then(function() {
-                        $rootScope.load++;
+                if(ngGae.getLoginStatus() == false)
+                    ngGae.auth().then(function() {
                         console.log('auth completed');
                         $scope.isAuth = true;
                         $rootScope.$broadcast("auth", {status: "success"});
