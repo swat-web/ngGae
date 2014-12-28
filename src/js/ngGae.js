@@ -63,7 +63,7 @@
                     var deferred = $q.defer();
                     var promises = [];
 
-                    angular.forEach( endPoint, function(src, version, root){
+                    angular.forEach( endPoints, function(src, version, root){
                         promises.push(gapi.client.load(src, version, null, root));
                     });
 
