@@ -59,6 +59,7 @@
                  * @return {object} return promise
                  */
                 init: function(endPoints) {
+                    console.log(endPoints);
                     var deferred = $q.defer();
                     var promises = [];
 
