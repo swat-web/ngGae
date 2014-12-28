@@ -1,11 +1,11 @@
 {
   "name": "angular-gae",
-  "version": "1.0.0",
+    "version": "1.0.0",
   "authors": [
     "Vlad Tansky <vl.tansky@gmail.com>"
   ],
   "description": "AngularJS library for Google App Engine",
-  "main": "dist/ngGae.js",
+  "main": "dist/js/ngGae.min.js",
   "keywords": [
     "GAE",
     "angularjs",
