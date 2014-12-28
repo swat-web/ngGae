@@ -62,9 +62,12 @@
                     console.log(endPoints);
                     var deferred = $q.defer();
                     var promises = [];
-
-                    angular.forEach( endPoints, function(src, version, root){
-                        promises.push(gapi.client.load(src, version, null, root));
+                    angular.forEach( endPoints, function(ep_object){
+                        if(ep_object.root) {
+                            promises.push(gapi.client.load(ep_object.src, ep_object.version, null, ep_object.root));
+                        }else{
+                            promises.push(gapi.client.load(ep_object.src, ep_object.version));
+                        }
                     });
 
                     $q.all(promises).then(function(){
